@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/cmd/StadiumSlotBot",
+            "console": "integratedTerminal",
+            "env": {
+                "StadiumSlotBotPort": "6000",
+                "StadiumSlotBotDbConnectionString": "postgres://pg:1@localhost:5432/stadiumSlotBot_db",
+                "StadiumSlotBotEnv": "dev",
+                "StadiumSlotBotAdminId": "188941082"
+            },
+            "postDebugTask": "post debug",
+            "cwd": "${workspaceRoot}"
+        },
+        { /* Debug Exec (faster launch) + visible build output in terminal */
+            "name": "Debug Exec",
+            "type": "go",
+            "request": "launch",
+            "mode": "exec",
+            "preLaunchTask": "dev build",
+            "program": "${workspaceRoot}/output",
+            "cwd": "${workspaceRoot}"
+        },
+    ]
+}
